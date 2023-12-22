@@ -1,0 +1,18 @@
+.score {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  gap: 5em;
+  padding: 20px;
+}
+
+.stat {
+  border-radius: 5px;
+  width: 150px;
+  height: 45px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #9ec187;
+  font-size: 0.75rem;
+}
