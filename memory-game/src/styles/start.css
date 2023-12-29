@@ -1,0 +1,29 @@
+.start-master {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border: 2px solid;
+}
+
+.btn-container {
+    display: flex;
+    justify-content: space-evenly;
+    width: 100%;
+}
+
+button {
+    font-style: italic;
+    background: none;
+    border: 2px solid;
+    width: 200px;
+    height: 50px;
+    color: white;
+    font-size: 2rem;
+}
+
+button:hover {
+    color: yellow;
+    cursor: pointer;
+}

@@ -1,7 +1,5 @@
 .card-master {
-  display: grid;
-  grid-template-columns: auto auto auto;
-  gap: 3em;
+
   max-width: 80%;
   height: 100%;
   margin-bottom: 5%;
