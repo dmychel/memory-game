@@ -1,17 +1,20 @@
 import "../styles/card.css";
+import PropTypes from "prop-types";
 
-const Cards = () => {
-  const cards = ["", "", "", "", "", "", "", "", ""];
+const Cards = ({ entry }) => {
   return (
     <>
-      <section className="card-master">
-        {cards.map((card) => (
-          <div className="card" key={crypto.randomUUID()}>
-            Random Image
-          </div>
-        ))}
-      </section>
+      {entry.map((url) => (
+        <div className="card-container" key={crypto.randomUUID()}>
+          {console.log(entry)}
+          <img src={url} alt="try again" />
+        </div>
+      ))}
     </>
   );
 };
 export default Cards;
+
+Cards.propTypes = {
+  entry: PropTypes.array,
+};
