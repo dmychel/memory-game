@@ -1,8 +1,8 @@
 import "../styles/start.css";
-import Cards from "./Cards";
+
 import PropTypes from "prop-types";
 
-const Start = ({ callAPI, entry }) => {
+const Start = ({ callAPI }) => {
   const startGame = (difficulty) => {
     const startEl = document.getElementById("startMas");
     startEl.style.display = "none";
@@ -31,7 +31,6 @@ const Start = ({ callAPI, entry }) => {
           <button onClick={() => startGame(2)}>Hard</button>
         </div>
       </section>
-      <Cards entry={entry} />
     </>
   );
 };
