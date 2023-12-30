@@ -1,17 +1,25 @@
 .card-master {
-
   max-width: 80%;
-  height: 100%;
+  height: 100vh;
   margin-bottom: 5%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 1em;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
 }
 
 .card {
-  height: 100px;
-  width: 100px;
-  border: 2px solid #6ba5ce;
+  border: 5px solid #6ba5ce;
   border-radius: 5px;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 20px;
+  padding: 1px;
+}
+
+.card:hover {
+  cursor: pointer;
+  transform: scale(1.05);
 }
