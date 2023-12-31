@@ -1,8 +1,8 @@
 import "./App.css";
-import Cards from "./components/Cards";
-import Header from "./components/Header";
-import Score from "./components/Score";
-import Start from "./components/Start";
+import Cards from "./components/UI/Cards";
+import Header from "./components/UI/Header";
+import Score from "./components/UI/Score";
+import Start from "./components/UI/Start";
 import { useState } from "react";
 
 function App() {
