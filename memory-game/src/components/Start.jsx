@@ -1,34 +1,21 @@
 import "../styles/start.css";
-
+import Button from "./UI/Button";
+import { fetchEntry } from "./service/api/fetchEntry";
 import PropTypes from "prop-types";
 
-const Start = ({ callAPI }) => {
-  const startGame = (difficulty) => {
-    const startEl = document.getElementById("startMas");
-    startEl.style.display = "none";
-    if (difficulty === 1) {
-      console.log(difficulty);
-      easy();
-    } else {
-      console.log(difficulty);
-      hard();
-    }
-  };
-
-  const hard = () => {
-    callAPI(2);
-  };
-
-  const easy = () => {
-    callAPI(1);
+const Start = ({ setTiles }) => {
+  const startGame = async (difficulty) => {
+    let arr = await callAPI(difficulty);
+    let newArr = shuffle(arr);
+    setTiles(newArr);
   };
 
   return (
     <>
       <section className="start-master" id="startMas">
         <div className="btn-container">
-          <button onClick={() => startGame(1)}>Easy</button>
-          <button onClick={() => startGame(2)}>Hard</button>
+          <Button title={"Easy"} clickEvent={() => startGame(1)} />
+          <Button title={"Hard"} clickEvent={() => startGame(2)} />
         </div>
       </section>
     </>
@@ -37,7 +24,33 @@ const Start = ({ callAPI }) => {
 
 export default Start;
 
+const callAPI = async (difficulty) => {
+  let arr = [];
+  let num = Math.floor(Math.random() * 380);
+  if (difficulty === 1) {
+    for (let i = 0; i < 3; i++) {
+      const promise = await fetchEntry(num);
+      arr.push(promise, promise, promise);
+    }
+    return arr;
+  } else {
+    let num = Math.floor(Math.random() * 380);
+    for (let i = 0; i < 8; i++) {
+      const promise = await fetchEntry(num);
+      arr.push(promise, promise);
+    }
+    return arr;
+  }
+};
+
+const shuffle = (arr) => {
+  let newArr = arr
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+  return newArr;
+};
+
 Start.propTypes = {
-  callAPI: PropTypes.func,
-  entry: PropTypes.array,
+  setTiles: PropTypes.func,
 };
