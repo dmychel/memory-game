@@ -1,13 +1,13 @@
 import "../styles/card.css";
 import PropTypes from "prop-types";
 
-const Cards = ({ entry }) => {
+const Cards = ({ tiles }) => {
   return (
     <>
       <section className="card-master">
-        {entry.map((url) => (
+        {tiles.map((url) => (
           <div className="card-container" key={crypto.randomUUID()}>
-            {console.log(entry)}
+            {console.log(tiles)}
             <img src={url} alt="try again" className="card" />
           </div>
         ))}
@@ -18,5 +18,5 @@ const Cards = ({ entry }) => {
 export default Cards;
 
 Cards.propTypes = {
-  entry: PropTypes.array,
+  tiles: PropTypes.array,
 };
