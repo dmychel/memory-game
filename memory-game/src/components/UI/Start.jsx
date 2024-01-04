@@ -3,10 +3,11 @@ import Button from "./primitives/Button";
 import { fetchEntry } from "../service/api/fetchEntry";
 import PropTypes from "prop-types";
 
-const Start = ({ setTiles }) => {
+const Start = ({ setTiles, setDifficulty }) => {
   const startGame = async (difficulty) => {
     let arr = await callAPI(difficulty);
     let newArr = shuffle(arr);
+    setDifficulty(difficulty);
     setTiles(newArr);
   };
 
@@ -53,4 +54,5 @@ const shuffle = (arr) => {
 
 Start.propTypes = {
   setTiles: PropTypes.func,
+  setDifficulty: PropTypes.func,
 };
