@@ -9,10 +9,14 @@
 .stat {
   border-radius: 5px;
   width: 150px;
-  height: 60px;
+  height: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
   background-color: #9ec187;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
+}
+
+.stat p {
+  font-size: 1.75rem;
 }
