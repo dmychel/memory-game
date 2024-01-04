@@ -5,6 +5,6 @@ export const fetchEntry = async (entry) => {
         `${BASE_URL}/${Math.floor(Math.random() * entry)}`
     );
     const data = await res.json();
-    const url = await data.data.image;
+    const url = await data.data
     return url
 }
