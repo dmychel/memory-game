@@ -6,12 +6,6 @@ import Start from "./components/UI/Start";
 import GameOver from "./components/UI/GameOver";
 import { useState, useEffect } from "react";
 
-// user selects tile
-// user selects second tile
-// function compares tile
-// if tiles match +1 point
-// if tiles do not match game ends
-
 function App() {
   const [tiles, setTiles] = useState([]);
   const [difficulty, setDifficulty] = useState();
@@ -28,7 +22,7 @@ function App() {
     const b = selection[1];
     const c = selection[2];
 
-    return a == b && b == c ? addPoint() : setIsGameOver(true);
+    return a == b && b == c ? addPoint() : setIsGameOver(!isGameOver);
   };
 
   const checkClicks = () => {
@@ -54,6 +48,7 @@ function App() {
             <Start setTiles={setTiles} setDifficulty={setDifficulty} />
             <Cards
               tiles={tiles}
+              setTiles={setTiles}
               difficulty={difficulty}
               selection={selection}
               setSelection={setSelection}
