@@ -10,16 +10,38 @@
   align-items: center;
 }
 
-.card {
-  border: 5px solid #6ba5ce;
-  border-radius: 5px;
+.card,
+.card-flipped {
+  background-color: #f7fbcc;
+  border: 7px solid;
+  border-radius: 3px;
+  height: 300px;
+  width: 200px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  padding: 1px;
+}
+
+.card img,
+.card-flipped img {
+  height: 175px;
+  width: 175px;
+  border-radius: 2px;
+}
+
+.card-flipped {
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.card:hover,
+.card-flipped:hover {
+  cursor: pointer;
 }
 
 .card:hover {
-  cursor: pointer;
   transform: scale(1.05);
+}
+
+.card {
+  justify-content: center;
 }
