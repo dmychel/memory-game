@@ -31,13 +31,22 @@ const callAPI = async (difficulty) => {
   if (difficulty === 1) {
     for (let i = 0; i < 3; i++) {
       const promise = await fetchEntry(num);
-      arr.push(promise, promise, promise);
+      const promise1 = promise;
+      const promise2 = promise;
+      const promise3 = promise;
+
+      promise1.flipped = false;
+      promise2.flipped = false;
+      promise3.flipped = false;
+
+      arr.push(promise1, promise2, promise3);
     }
     return arr;
   } else {
     let num = Math.floor(Math.random() * 380);
     for (let i = 0; i < 8; i++) {
       const promise = await fetchEntry(num);
+      promise.flipped = false;
       arr.push(promise, promise);
     }
     return arr;
