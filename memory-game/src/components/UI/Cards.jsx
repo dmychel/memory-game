@@ -1,18 +1,27 @@
 import "../../styles/card.css";
 import PropTypes from "prop-types";
-import Card from "./primitives/Card";
+import Card from "./Card";
 
 const Cards = ({ tiles, selection, setSelection }) => {
+  const handleFlip = (index) => {
+    const clonedArr = tiles.map((x) => x);
+    const data = clonedArr[index];
+    data.flipped = true;
+    console.log(clonedArr[index]);
+  };
+
   return (
     <>
       <section className="card-master">
-        {tiles.map((url) => (
+        {tiles.map((data, index) => (
           <Card
-            key={crypto.randomUUID()}
-            url={url.image}
+            key={index}
+            index={index}
+            url={data.image}
             selection={selection}
             setSelection={setSelection}
-            data={url}
+            data={data}
+            handleFlip={handleFlip}
           />
         ))}
       </section>
