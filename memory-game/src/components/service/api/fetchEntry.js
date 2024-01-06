@@ -4,6 +4,5 @@ export const fetchEntry = async (entry) => {
   const res = await fetch(`${BASE_URL}/${Math.floor(Math.random() * entry)}`);
   const data = await res.json();
   const url = await data.data;
-  url.uniqueID = crypto.randomUUID();
   return url;
 };
