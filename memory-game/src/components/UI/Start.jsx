@@ -4,11 +4,15 @@ import { fetchEntry } from "../service/api/fetchEntry";
 import PropTypes from "prop-types";
 
 const Start = ({ setTiles, setDifficulty }) => {
+  const removeDislpay = () => {
+    const htmlEL = (document.getElementById("startMas").style.display = "none");
+  };
   const startGame = async (difficulty) => {
     const arrPhase1 = await callAPI(difficulty);
     const arrPhase2 = addUniqueID(arrPhase1);
     const arrPhase3 = shuffle(arrPhase2);
 
+    removeDislpay();
     setDifficulty(difficulty);
     setTiles(arrPhase3);
     setTimeout(() => {
