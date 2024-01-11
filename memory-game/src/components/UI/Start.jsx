@@ -11,6 +11,14 @@ const Start = ({ setTiles, setDifficulty }) => {
 
     setDifficulty(difficulty);
     setTiles(arrPhase3);
+    setTimeout(() => {
+      const phaseFinal = [...arrPhase3];
+      phaseFinal.map((obj) => {
+        obj.flipped = false;
+      });
+      setTiles(phaseFinal);
+      console.log("yo");
+    }, "5000");
   };
 
   return (
@@ -34,7 +42,7 @@ const callAPI = async (difficulty) => {
   if (difficulty === 1) {
     for (let i = 0; i < 3; i++) {
       const promise = await fetchEntry(num);
-      promise.flipped = false;
+      promise.flipped = true;
 
       const res1 = { ...promise };
       const res2 = { ...promise };
