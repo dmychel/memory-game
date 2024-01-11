@@ -5,10 +5,12 @@ import PropTypes from "prop-types";
 
 const Start = ({ setTiles, setDifficulty }) => {
   const startGame = async (difficulty) => {
-    let arr = await callAPI(difficulty);
-    let newArr = shuffle(arr);
+    const arrPhase1 = await callAPI(difficulty);
+    const arrPhase2 = addUniqueID(arrPhase1);
+    const arrPhase3 = shuffle(arrPhase2);
+
     setDifficulty(difficulty);
-    setTiles(newArr);
+    setTiles(arrPhase3);
   };
 
   return (
@@ -28,18 +30,17 @@ export default Start;
 const callAPI = async (difficulty) => {
   let arr = [];
   let num = Math.floor(Math.random() * 380);
+
   if (difficulty === 1) {
     for (let i = 0; i < 3; i++) {
       const promise = await fetchEntry(num);
-      const promise1 = promise;
-      const promise2 = promise;
-      const promise3 = promise;
+      promise.flipped = false;
 
-      promise1.flipped = false;
-      promise2.flipped = false;
-      promise3.flipped = false;
+      const res1 = { ...promise };
+      const res2 = { ...promise };
+      const res3 = { ...promise };
 
-      arr.push(promise1, promise2, promise3);
+      arr.push(res1, res2, res3);
     }
     return arr;
   } else {
@@ -51,6 +52,14 @@ const callAPI = async (difficulty) => {
     }
     return arr;
   }
+};
+
+const addUniqueID = (arr) => {
+  let newArr = arr;
+  newArr.map((value) => {
+    return (value.uniqueID = crypto.randomUUID());
+  });
+  return newArr;
 };
 
 const shuffle = (arr) => {
