@@ -44,22 +44,24 @@ function App() {
     <>
       <section className="app">
         <Header />
-        <Score points={points} />
-        {isGameOver ? (
-          <GameOver />
-        ) : (
-          <>
-            <Start setTiles={setTiles} setDifficulty={setDifficulty} />
-            <Cards
-              tiles={tiles}
-              setTiles={setTiles}
-              difficulty={difficulty}
-              selection={selection}
-              setSelection={setSelection}
-              handleFlip={handleFlip}
-            />
-          </>
-        )}
+        <section className="content">
+          <Score points={points} />
+          {isGameOver ? (
+            <GameOver />
+          ) : (
+            <>
+              <Start setTiles={setTiles} setDifficulty={setDifficulty} />
+              <Cards
+                tiles={tiles}
+                setTiles={setTiles}
+                difficulty={difficulty}
+                selection={selection}
+                setSelection={setSelection}
+                handleFlip={handleFlip}
+              />
+            </>
+          )}
+        </section>
       </section>
     </>
   );
