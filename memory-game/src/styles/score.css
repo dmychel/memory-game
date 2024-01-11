@@ -1,5 +1,6 @@
 .score {
   display: flex;
+  flex-direction: column;
   width: 100%;
   justify-content: center;
   gap: 5em;
@@ -19,4 +20,11 @@
 
 .stat p {
   font-size: 1.75rem;
+}
+
+@media only screen and (max-width: 1000px) {
+  .score {
+    width: 40vh;
+    align-items: center;
+  }
 }

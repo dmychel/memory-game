@@ -1,28 +1,37 @@
 .start-master {
-    height: 100%;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 50vw;
 }
 
 .btn-container {
-    display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
 }
 
 button {
-    font-style: italic;
-    background: none;
-    border: 2px solid;
-    width: 200px;
-    height: 50px;
-    color: white;
-    font-size: 2rem;
+  font-style: italic;
+  background: none;
+  border: 2px solid;
+  width: 200px;
+  height: 50px;
+  color: white;
+  font-size: 2rem;
 }
 
 button:hover {
-    color: yellow;
-    cursor: pointer;
+  color: yellow;
+  cursor: pointer;
+}
+
+@media only screen and (max-width: 1000px) {
+  .btn-container {
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    gap: 5em;
+  }
 }
