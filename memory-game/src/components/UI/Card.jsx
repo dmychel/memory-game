@@ -1,6 +1,6 @@
 import PropTypes from "prop-types";
 
-const Card = ({ index, data, url, selection, setSelection, handleFlip }) => {
+const Card = ({ index, data, url, handleFlip, selection, setSelection }) => {
   const handleClick = () => {
     setSelection([...selection, data.id]);
     handleFlip(index);
