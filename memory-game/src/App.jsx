@@ -36,6 +36,10 @@ function App() {
     return setPoints((points) => points + 1);
   };
 
+  const handleFlip = (index) => {
+    let arr = [...tiles];
+    arr[index].flipped = true;
+  };
   return (
     <>
       <section className="app">
@@ -52,6 +56,7 @@ function App() {
               difficulty={difficulty}
               selection={selection}
               setSelection={setSelection}
+              handleFlip={handleFlip}
             />
           </>
         )}
