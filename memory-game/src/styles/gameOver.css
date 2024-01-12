@@ -1,4 +1,9 @@
+/* mobile */
+@media only screen and (max-width: 600px) {
+}
+
 h1 {
-    border: 2px solid;
-    width: 100%;
+  border: 2px solid;
+  width: 100%;
+  text-align: center;
 }
