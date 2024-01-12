@@ -1,3 +1,5 @@
+import "../../../styles/gameOver.css";
+
 const GameOver = () => {
   return (
     <>
