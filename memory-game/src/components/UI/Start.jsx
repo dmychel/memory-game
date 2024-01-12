@@ -3,7 +3,7 @@ import Button from "./primitives/Button";
 import { fetchEntry } from "../service/api/fetchEntry";
 import PropTypes from "prop-types";
 
-const Start = ({ setTiles, setDifficulty }) => {
+const Start = ({ setTiles, gameStart, setGameStart }) => {
   const removeDislpay = () => {
     const htmlEL = (document.getElementById("startMas").style.display = "none");
   };
@@ -13,7 +13,7 @@ const Start = ({ setTiles, setDifficulty }) => {
     const arrPhase3 = shuffle(arrPhase2);
 
     removeDislpay();
-    setDifficulty(difficulty);
+    setGameStart(!gameStart);
     setTiles(arrPhase3);
     setTimeout(() => {
       const phaseFinal = [...arrPhase3];
@@ -84,5 +84,6 @@ const shuffle = (arr) => {
 
 Start.propTypes = {
   setTiles: PropTypes.func,
-  setDifficulty: PropTypes.func,
+  gameStart: PropTypes.bool,
+  setGameStart: PropTypes.func,
 };
