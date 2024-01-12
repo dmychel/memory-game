@@ -1,18 +1,18 @@
 import "./App.css";
-import Cards from "./components/UI/Cards";
+
+import Content from "./components/UI/Content";
 import Header from "./components/UI/Header";
-import Score from "./components/UI/Score";
-import Start from "./components/UI/Start";
-import GameOver from "./components/UI/primitives/GameOver";
 import { useState, useEffect } from "react";
+
+// round function that does the same as start game
 
 function App() {
   const [tiles, setTiles] = useState([]);
-  const [difficulty, setDifficulty] = useState();
   const [selection, setSelection] = useState([]);
   const [points, setPoints] = useState(0);
   const [best, setBest] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
+  const [gameStart, setGameStart] = useState(false);
 
   useEffect(() => {
     checkClicks();
@@ -48,24 +48,19 @@ function App() {
     <>
       <section className="app">
         <Header />
-        <section className="content">
-          <Score points={points} best={best} setBest={setBest} />
-          {isGameOver ? (
-            <GameOver />
-          ) : (
-            <>
-              <Start setTiles={setTiles} setDifficulty={setDifficulty} />
-              <Cards
-                tiles={tiles}
-                setTiles={setTiles}
-                difficulty={difficulty}
-                selection={selection}
-                setSelection={setSelection}
-                handleFlip={handleFlip}
-              />
-            </>
-          )}
-        </section>
+        <Content
+          points={points}
+          best={best}
+          setBest={setBest}
+          tiles={tiles}
+          setTiles={setTiles}
+          selection={selection}
+          setSelection={setSelection}
+          handleFlip={handleFlip}
+          gameStart={gameStart}
+          setGameStart={setGameStart}
+          isGameOver={isGameOver}
+        />
       </section>
     </>
   );
