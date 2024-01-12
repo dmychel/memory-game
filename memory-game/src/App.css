@@ -11,13 +11,3 @@
   height: 100vh;
   overflow-x: hidden;
 }
-
-.content {
-  display: flex;
-  align-items: center;
-  height: 100vh;
-}
-
-@media only screen and (max-width: 1000px) {
-  .content {}
-}
