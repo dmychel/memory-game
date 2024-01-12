@@ -1,6 +1,6 @@
 .card-master {
   max-width: 80%;
-  height: 100vh;
+  height: fit-content;
   margin-bottom: 5%;
   display: grid;
   grid-template-columns: auto auto auto;
@@ -13,18 +13,19 @@
 .card,
 .card-flipped {
   background-color: #f7fbcc;
-  border: 7px solid;
+  border: 5px solid;
   border-radius: 3px;
-  height: 300px;
-  width: 200px;
+  height: 200px;
+  width: 150px;
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 .card img,
 .card-flipped img {
-  height: 175px;
-  width: 175px;
+  height: 130px;
+  width: 130px;
   border-radius: 2px;
 }
 
@@ -47,17 +48,16 @@
 }
 
 @media only screen and (max-width: 1000px) {
-  .card-master {
-    margin-bottom: 0;
-    height: fit-content;
-  }
+
   .card,
   .card-flipped {
     height: 150px;
     width: 100px;
     text-align: center;
     border: 5px solid black;
+    font-size: .75rem;
   }
+
   .card img,
   .card-flipped img {
     height: 95px;

@@ -1,6 +1,5 @@
 .score {
   display: flex;
-  flex-direction: column;
   width: 100%;
   justify-content: center;
   gap: 5em;
@@ -26,5 +25,6 @@
   .score {
     width: 40vh;
     align-items: center;
+    flex-direction: column;
   }
 }
