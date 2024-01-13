@@ -28,7 +28,10 @@ const Content = ({
       {gameStart && (
         <>
           {isGameOver ? (
-            <GameOver />
+            <>
+              <Score points={points} best={best} setBest={setBest} />
+              <GameOver />
+            </>
           ) : (
             <>
               <Score points={points} best={best} setBest={setBest} />
