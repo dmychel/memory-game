@@ -21,7 +21,6 @@ const Start = ({ setTiles, gameStart, setGameStart }) => {
         obj.flipped = false;
       });
       setTiles(phaseFinal);
-      console.log("yo");
     }, "5000");
   };
 
@@ -45,19 +44,14 @@ const callAPI = async (difficulty) => {
 
   if (difficulty === 1) {
     for (let i = 0; i < 3; i++) {
-      try {
-        const promise = await fetchEntry(num);
-        promise.flipped = true;
+      const promise = await fetchEntry(num);
+      promise.flipped = true;
 
-        const res1 = { ...promise };
-        const res2 = { ...promise };
-        const res3 = { ...promise };
+      const res1 = { ...promise };
+      const res2 = { ...promise };
+      const res3 = { ...promise };
 
-        arr.push(res1, res2, res3);
-      } catch (err) {
-        alert("Please try again");
-        console.log(err);
-      }
+      arr.push(res1, res2, res3);
     }
     return arr;
   } else {
