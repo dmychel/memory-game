@@ -2,8 +2,7 @@ import PropTypes from "prop-types";
 
 const Card = ({ index, data, url, handleFlip, selection, setSelection }) => {
   const handleClick = () => {
-    setSelection([...selection, data.id]);
-    handleFlip(index);
+    return setSelection([...selection, data.id]), handleFlip(index);
   };
 
   const FlippedCard = () => {
