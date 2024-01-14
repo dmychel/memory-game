@@ -19,6 +19,7 @@ const Content = ({
   isGameOver = { isGameOver },
   difficulty = { difficulty },
   setDifficulty = { setDifficulty },
+  startGame = { startGame },
 }) => {
   return (
     <section className="content">
@@ -27,6 +28,7 @@ const Content = ({
         gameStart={gameStart}
         setGameStart={setGameStart}
         setDifficulty={setDifficulty}
+        startGame={startGame}
       />
       {gameStart && (
         <>
@@ -69,4 +71,5 @@ Content.propTypes = {
   isGameOver: PropTypes.bool,
   difficulty: PropTypes.number,
   setDifficulty: PropTypes.func,
+  startGame: PropTypes.func,
 };
