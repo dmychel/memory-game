@@ -29,17 +29,17 @@ function App() {
   useEffect(() => {
     if (difficulty === 1) {
       if (points % 3 === 0) {
-        console.log("round over");
+        setHighScore();
         startGame(1);
       } else {
-        return;
+        setHighScore();
       }
     } else if (difficulty === 2) {
       if (points % 8 === 0) {
-        console.log("round over");
+        setHighScore();
         startGame(2);
       } else {
-        return;
+        setHighScore;
       }
     }
   }, [points]);
@@ -71,7 +71,9 @@ function App() {
     arr[index].flipped = true;
   };
 
-  const setHighScore = () => {};
+  const setHighScore = () => {
+    points > best ? setBest(points) : null;
+  };
 
   const endGame = (value) => {
     if (value === "win") {
