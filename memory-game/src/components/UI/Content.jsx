@@ -17,6 +17,8 @@ const Content = ({
   gameStart = { gameStart },
   setGameStart = { setGameStart },
   isGameOver = { isGameOver },
+  difficulty = { difficulty },
+  setDifficulty = { setDifficulty },
 }) => {
   return (
     <section className="content">
@@ -24,6 +26,7 @@ const Content = ({
         setTiles={setTiles}
         gameStart={gameStart}
         setGameStart={setGameStart}
+        setDifficulty={setDifficulty}
       />
       {gameStart && (
         <>
@@ -40,6 +43,7 @@ const Content = ({
                 selection={selection}
                 setSelection={setSelection}
                 handleFlip={handleFlip}
+                difficulty={difficulty}
               />
             </>
           )}
@@ -63,4 +67,6 @@ Content.propTypes = {
   gameStart: PropTypes.bool,
   setGameStart: PropTypes.func,
   isGameOver: PropTypes.bool,
+  difficulty: PropTypes.number,
+  setDifficulty: PropTypes.func,
 };
