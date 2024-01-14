@@ -7,6 +7,7 @@ const Start = ({ setTiles, gameStart, setGameStart, setDifficulty }) => {
   const removeDislpay = () => {
     const htmlEL = (document.getElementById("startMas").style.display = "none");
   };
+
   const startGame = async (difficulty) => {
     const arrPhase1 = await callAPI(difficulty);
     const arrPhase2 = addUniqueID(arrPhase1);
@@ -16,10 +17,11 @@ const Start = ({ setTiles, gameStart, setGameStart, setDifficulty }) => {
     setGameStart(!gameStart);
     setDifficulty(difficulty);
     setTiles(arrPhase3);
+
     setTimeout(() => {
       const phaseFinal = [...arrPhase3];
       phaseFinal.map((obj) => {
-        obj.flipped = false;
+        return (obj.flipped = false);
       });
       setTiles(phaseFinal);
     }, "3000");
@@ -46,7 +48,6 @@ const callAPI = async (difficulty) => {
   if (difficulty === 1) {
     for (let i = 0; i < 3; i++) {
       const promise = await fetchEntry(num);
-      promise.flipped = true;
 
       const res1 = { ...promise };
       const res2 = { ...promise };
@@ -59,8 +60,11 @@ const callAPI = async (difficulty) => {
     let num = Math.floor(Math.random() * 380);
     for (let i = 0; i < 8; i++) {
       const promise = await fetchEntry(num);
-      promise.flipped = false;
-      arr.push(promise, promise);
+
+      const res1 = { ...promise };
+      const res2 = { ...promise };
+
+      arr.push(res1, res2);
     }
     return arr;
   }
