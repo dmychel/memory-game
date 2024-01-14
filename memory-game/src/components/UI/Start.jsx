@@ -3,7 +3,7 @@ import Button from "./primitives/Button";
 import { fetchEntry } from "../service/api/fetchEntry";
 import PropTypes from "prop-types";
 
-const Start = ({ setTiles, gameStart, setGameStart }) => {
+const Start = ({ setTiles, gameStart, setGameStart, setDifficulty }) => {
   const removeDislpay = () => {
     const htmlEL = (document.getElementById("startMas").style.display = "none");
   };
@@ -14,6 +14,7 @@ const Start = ({ setTiles, gameStart, setGameStart }) => {
 
     removeDislpay();
     setGameStart(!gameStart);
+    setDifficulty(difficulty);
     setTiles(arrPhase3);
     setTimeout(() => {
       const phaseFinal = [...arrPhase3];
@@ -21,7 +22,7 @@ const Start = ({ setTiles, gameStart, setGameStart }) => {
         obj.flipped = false;
       });
       setTiles(phaseFinal);
-    }, "5000");
+    }, "3000");
   };
 
   return (
@@ -73,6 +74,7 @@ const addUniqueID = (arr) => {
   return newArr;
 };
 
+// shuffle card order
 const shuffle = (arr) => {
   let newArr = arr
     .map((value) => ({ value, sort: Math.random() }))
@@ -85,4 +87,5 @@ Start.propTypes = {
   setTiles: PropTypes.func,
   gameStart: PropTypes.bool,
   setGameStart: PropTypes.func,
+  setDifficulty: PropTypes.func,
 };
