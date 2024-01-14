@@ -2,7 +2,7 @@ import "../../styles/card.css";
 import PropTypes from "prop-types";
 import Card from "./Card";
 
-const Cards = ({ tiles, selection, setSelection, handleFlip }) => {
+const Cards = ({ tiles, selection, setSelection, handleFlip, checkClicks }) => {
   return (
     <>
       <section className="card-master">
@@ -29,4 +29,5 @@ Cards.propTypes = {
   selection: PropTypes.array,
   setSelection: PropTypes.func,
   handleFlip: PropTypes.func,
+  checkClicks: PropTypes.func,
 };
