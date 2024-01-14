@@ -3,6 +3,7 @@ import "./App.css";
 import Content from "./components/UI/Content";
 import Header from "./components/UI/Header";
 import { useState, useEffect } from "react";
+import { fetchEntry } from "./components/service/api/fetchEntry";
 
 // round function that does the same as start game
 
@@ -23,6 +24,25 @@ function App() {
       checkPlay();
     }
   }, [selection, difficulty]);
+
+  // check round status
+  useEffect(() => {
+    if (difficulty === 1) {
+      if (points % 3 === 0) {
+        console.log("round over");
+        startGame(1);
+      } else {
+        return;
+      }
+    } else if (difficulty === 2) {
+      if (points % 8 === 0) {
+        console.log("round over");
+        startGame(2);
+      } else {
+        return;
+      }
+    }
+  }, [points]);
 
   const checkPlay = () => {
     if (difficulty === 1) {
@@ -61,6 +81,24 @@ function App() {
     }
   };
 
+  const startGame = async (difficulty) => {
+    const arrPhase1 = await callAPI(difficulty);
+    const arrPhase2 = addUniqueID(arrPhase1);
+    const arrPhase3 = shuffle(arrPhase2);
+
+    setGameStart(true);
+    setDifficulty(difficulty);
+    setTiles(arrPhase3);
+
+    setTimeout(() => {
+      const phaseFinal = [...arrPhase3];
+      phaseFinal.map((obj) => {
+        return (obj.flipped = false);
+      });
+      setTiles(phaseFinal);
+    }, "3000");
+  };
+
   return (
     <>
       <section className="app">
@@ -79,10 +117,56 @@ function App() {
           isGameOver={isGameOver}
           difficulty={difficulty}
           setDifficulty={setDifficulty}
+          startGame={startGame}
         />
       </section>
     </>
   );
 }
 
+const callAPI = async (difficulty) => {
+  let arr = [];
+  let num = Math.floor(Math.random() * 380);
+
+  if (difficulty === 1) {
+    for (let i = 0; i < 3; i++) {
+      const promise = await fetchEntry(num);
+
+      const res1 = { ...promise };
+      const res2 = { ...promise };
+      const res3 = { ...promise };
+
+      arr.push(res1, res2, res3);
+    }
+    return arr;
+  } else {
+    let num = Math.floor(Math.random() * 380);
+    for (let i = 0; i < 8; i++) {
+      const promise = await fetchEntry(num);
+
+      const res1 = { ...promise };
+      const res2 = { ...promise };
+
+      arr.push(res1, res2);
+    }
+    return arr;
+  }
+};
+
+const addUniqueID = (arr) => {
+  let newArr = arr;
+  newArr.map((value) => {
+    return (value.uniqueID = crypto.randomUUID());
+  });
+  return newArr;
+};
+
+// shuffle card order
+const shuffle = (arr) => {
+  let newArr = arr
+    .map((value) => ({ value, sort: Math.random() }))
+    .sort((a, b) => a.sort - b.sort)
+    .map(({ value }) => value);
+  return newArr;
+};
 export default App;
