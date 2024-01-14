@@ -19,9 +19,8 @@ function App() {
   useEffect(() => {
     if (selection.length === 3 && difficulty === 1) {
       checkPlay();
-      console.log("ran");
     } else if (selection.length === 2 && difficulty == 2) {
-      console.log("yo we did it on hard");
+      checkPlay();
     }
   }, [selection, difficulty]);
 
