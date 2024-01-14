@@ -10,8 +10,22 @@
   align-items: center;
 }
 
+.card-master-hard {
+  max-width: 100%;
+  height: fit-content;
+  margin-bottom: 5%;
+  display: grid;
+  grid-template-columns: auto auto auto auto;
+  gap: 1em;
+  padding: 20px;
+  justify-content: center;
+  align-items: center;
+}
+
 .card,
-.card-flipped {
+.card-flipped,
+.hard-card,
+.hard-card-flipped {
   background-color: #f7fbcc;
   border: 5px solid;
   border-radius: 3px;
@@ -48,20 +62,45 @@
 }
 
 @media only screen and (max-width: 1000px) {
+  .card,
+  .card-flipped,
+  .hard-card,
+  .hard-card-flipped {
+    text-align: center;
+    border: 5px solid black;
+  }
+
+  .card img,
+  .card-flipped img,
+  .hard-card img,
+  .hard-card-flipped img {
+    border-radius: 2px;
+  }
 
   .card,
   .card-flipped {
     height: 150px;
     width: 100px;
-    text-align: center;
-    border: 5px solid black;
-    font-size: .75rem;
+    font-size: 0.75rem;
+  }
+
+  .hard-card,
+  .hard-card-flipped {
+    height: 75px;
+    width: 75px;
+    justify-content: center;
+  }
+
+  .hard-card img,
+  .hard-card-flipped img {
+    height: 90%;
+    width: 90%;
+    border-radius: 5px;
   }
 
   .card img,
   .card-flipped img {
     height: 95px;
     width: 95px;
-    border-radius: 2px;
   }
 }
