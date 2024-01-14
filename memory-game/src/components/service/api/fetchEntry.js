@@ -5,9 +5,10 @@ export const fetchEntry = async (entry) => {
     const res = await fetch(`${BASE_URL}/${Math.floor(Math.random() * entry)}`);
     const data = await res.json();
     const url = await data.data;
-    return url
+    url.flipped = true;
+    return url;
   } catch (err) {
-    console.log(err)
-    alert('Please Refresh the page and try again.')
+    console.log(err);
+    alert("Please Refresh the page and try again.");
   }
 };
