@@ -55,7 +55,6 @@ function App() {
   const setHighScore = () => {};
 
   const endGame = (value) => {
-    console.log(value);
     if (value === "win") {
       return addPoint(), setHighScore();
     } else {
