@@ -13,23 +13,32 @@ function App() {
   const [best, setBest] = useState(0);
   const [isGameOver, setIsGameOver] = useState(false);
   const [gameStart, setGameStart] = useState(false);
+  const [difficulty, setDifficulty] = useState(0);
 
+  // check clicks
   useEffect(() => {
-    checkClicks();
-  }, [selection]);
+    if (selection.length === 3 && difficulty === 1) {
+      checkPlay();
+      console.log("ran");
+    } else if (selection.length === 2 && difficulty == 2) {
+      console.log("yo we did it on hard");
+    }
+  }, [selection, difficulty]);
 
-  const checkPlayEasy = () => {
-    const a = selection[0];
-    const b = selection[1];
-    const c = selection[2];
+  const checkPlay = () => {
+    if (difficulty === 1) {
+      const a = selection[0];
+      const b = selection[1];
+      const c = selection[2];
 
-    return a == b && b == c ? addPoint() : setIsGameOver(!isGameOver);
-  };
+      return (
+        a == b && b == c ? endGame("win") : endGame("lose"), setSelection([])
+      );
+    } else {
+      const a = selection[0];
+      const b = selection[1];
 
-  const checkClicks = () => {
-    if (selection.length === 3) {
-      checkPlayEasy();
-      setSelection([]);
+      return a == b ? endGame("win") : endGame("lose"), setSelection([]);
     }
   };
 
@@ -37,12 +46,22 @@ function App() {
     return setPoints((points) => points + 1);
   };
 
+  // flip play card
   const handleFlip = (index) => {
     let arr = [...tiles];
     arr[index].flipped = true;
   };
 
-  const setHighScore = (value) => {};
+  const setHighScore = () => {};
+
+  const endGame = (value) => {
+    console.log(value);
+    if (value === "win") {
+      return addPoint(), setHighScore();
+    } else {
+      return setIsGameOver(!isGameOver);
+    }
+  };
 
   return (
     <>
@@ -60,6 +79,8 @@ function App() {
           gameStart={gameStart}
           setGameStart={setGameStart}
           isGameOver={isGameOver}
+          difficulty={difficulty}
+          setDifficulty={setDifficulty}
         />
       </section>
     </>
