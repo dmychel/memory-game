@@ -1,18 +1,36 @@
 .score {
   display: flex;
-  width: 100%;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
+  width: 20%;
+  height: 100%;
   gap: 5em;
-  padding: 20px;
 }
 
 .stat {
   border-radius: 5px;
   width: 150px;
-  height: 45px;
+  height: 80px;
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;
   background-color: #9ec187;
-  font-size: 0.75rem;
+  font-size: 0.6rem;
+}
+
+.stat p {
+  font-size: 1.75rem;
+}
+
+/* mobile */
+@media only screen and (max-width: 600px) {
+  .score {
+    height: 50%;
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    gap: 0;
+  }
 }

@@ -1,16 +1,17 @@
-import "../styles/score.css";
+import "../../styles/score.css";
+import PropTypes from "prop-types";
 
-const Score = () => {
+const Score = ({ points, best }) => {
   return (
     <>
       <section className="score">
         <div className="stat">
           <h2>Current Score</h2>
-          <p>0</p>
+          <p>{points}</p>
         </div>
         <div className="stat">
           <h2>Best Score</h2>
-          <p>0</p>
+          <p>{best}</p>
         </div>
       </section>
     </>
@@ -18,3 +19,8 @@ const Score = () => {
 };
 
 export default Score;
+
+Score.propTypes = {
+  points: PropTypes.number,
+  best: PropTypes.number,
+};

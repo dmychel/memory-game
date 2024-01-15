@@ -1,9 +1,22 @@
 .header {
-  background-color: #836641;
+  background-color: #47642d;
   padding: 20px;
   width: 100%;
 }
 
 h1 {
   margin-left: 2%;
+  font-size: 1.75rem;
+  color: transparent;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+}
+
+@media only screen and (max-width: 600px) {
+  .header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+  }
 }
