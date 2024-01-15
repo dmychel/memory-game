@@ -5,14 +5,14 @@ import Card from "./Card";
 const Cards = ({ tiles, selection, setSelection, handleFlip, difficulty }) => {
   const renderType = () => {
     if (difficulty === 1) {
-      return "card-master";
+      return "card-parent";
     }
-    return "card-master-hard";
+    return "card-parent-hard";
   };
 
   return (
-    <>
-      <section className={renderType()}>
+    <section className="card-master">
+      <div className={renderType()}>
         {tiles.map((data, index) => (
           <Card
             key={index}
@@ -25,8 +25,8 @@ const Cards = ({ tiles, selection, setSelection, handleFlip, difficulty }) => {
             difficulty={difficulty}
           />
         ))}
-      </section>
-    </>
+      </div>
+    </section>
   );
 };
 
