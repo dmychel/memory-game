@@ -4,14 +4,18 @@ import Content from "./components/UI/Content";
 import Header from "./components/UI/Header";
 import { useState, useEffect } from "react";
 import { fetchEntry } from "./components/service/api/fetchEntry";
+import { useLocalStorage } from "./components/useLocalStorage";
 
 // round function that does the same as start game
 
 function App() {
+  // LOCAL STORAGE
+  const { setData, getData } = useLocalStorage("value");
+
   const [tiles, setTiles] = useState([]);
   const [selection, setSelection] = useState([]);
   const [points, setPoints] = useState(0);
-  const [best, setBest] = useState(0);
+  const [best, setBest] = useState(getData());
   const [isGameOver, setIsGameOver] = useState(false);
   const [gameStart, setGameStart] = useState(false);
   const [difficulty, setDifficulty] = useState(0);
@@ -39,7 +43,7 @@ function App() {
         setHighScore();
         startGame(2);
       } else {
-        setHighScore;
+        setHighScore();
       }
     }
   }, [points]);
@@ -72,14 +76,14 @@ function App() {
   };
 
   const setHighScore = () => {
-    points > best ? setBest(points) : null;
+    return points > best ? setBest(points) : null, setData(best);
   };
 
   const endGame = (value) => {
     if (value === "win") {
       return addPoint(), setHighScore();
     } else {
-      return setIsGameOver(!isGameOver);
+      return setIsGameOver(!isGameOver), setHighScore();
     }
   };
 
