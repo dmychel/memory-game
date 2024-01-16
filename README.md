@@ -23,12 +23,12 @@ This app was also made possible because of the talented engineer who created the
 
 ## App Wirefram
 
-<img src='./src/other/memory-wireframe.png' alt='wireframe'>
+<img src='./memory-game/src/other/memory-wireframe.png' alt='wireframe'>
 
 ## UI Inspiration & References
 
-<img src='./src/other/ui-reference.png' alt='reference image'>
-<img src='./src/other/ui-reference2.jpg' alt='reference image'>
+<img src='./memory-game/src/other/ui-reference.png' alt='reference image'>
+<img src='./memory-game/src/other/ui-reference2.jpg' alt='reference image'>
 
 ## Dev Notes
 
