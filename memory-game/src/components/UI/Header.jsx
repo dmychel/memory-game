@@ -4,7 +4,7 @@ const Header = () => {
   return (
     <>
       <section className="header">
-        <h1>Memory Card Game</h1>
+        <h1>Windfall Matchup</h1>
       </section>
     </>
   );
