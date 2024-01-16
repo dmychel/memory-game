@@ -5,7 +5,7 @@
   align-items: center;
   width: 50vw;
   border: 3px solid rgba(0, 0, 0, 0.265);
-  background-color: #deb222ad;
+  background-color: #deb222b6;
   box-shadow: 0 0 2px #ffcc00;
   height: 30%;
 }
@@ -44,7 +44,7 @@
 button {
   font-style: italic;
   background: #6c9d34;
-  border: 6px solid #408836;
+  border: 6px solid #2f6428;
   width: 200px;
   height: 50px;
   color: white;
@@ -52,7 +52,7 @@ button {
 }
 
 button:hover {
-  color: yellow;
+  color: black;
   cursor: pointer;
 }
 
@@ -63,7 +63,7 @@ button:active {
 /* mobile */
 @media only screen and (max-width: 600px) {
   .start-master {
-    width: 100%;
+    width: 90%;
   }
 
   .btn-container {

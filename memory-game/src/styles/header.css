@@ -2,14 +2,15 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  background-color: #47642d;
-  padding: 20px;
+  text-align: center;
+  background-color: #08175a77;
+  height: 20%;
   width: 100%;
 }
 
 h1 {
   font-size: 3rem;
-  color: yellow;
-  -webkit-text-stroke-width: 2.5px;
-  -webkit-text-stroke-color: black;
+  color: red;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: rgb(233, 233, 233);
 }
