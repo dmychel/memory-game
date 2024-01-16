@@ -4,7 +4,7 @@ const GameOver = () => {
   return (
     <section className="game-over-master">
       <div className="game-over">
-        <h1>Game Over</h1>
+        <h1>GAME OVER</h1>
         <button className="game-over-btn" onClick={() => location.reload()}>
           Try Again
         </button>
