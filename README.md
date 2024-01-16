@@ -8,7 +8,7 @@ Version 1.0 includes a hard and easy mode. This version also keeps track of your
 
 ## Installing
 
-No need to install just click this <a href='https://app.netlify.com/sites/relaxed-medovik-632ef4/deploys/65a61f49f8ae31869770c983'>Link</a>!
+No need to install just click this <a href="https://main--relaxed-medovik-632ef4.netlify.app/">Link</a>!
 
 ## Built With
 
