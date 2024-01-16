@@ -1,8 +1,36 @@
 .start-master {
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
   width: 50vw;
+  border: 3px solid rgba(0, 0, 0, 0.265);
+  background-color: #deb222ad;
+  box-shadow: 0 0 2px #ffcc00;
+  height: 30%;
+}
+
+.title {
+  background-color: #bbbb44;
+  color: #422307;
+  border-left: 8px solid;
+  border-right: 10px solid;
+  border-top: 5px solid;
+  border-bottom: 4px solid;
+  border-radius: 2px;
+  width: 90%;
+  margin-top: 5%;
+  padding: 5px;
+
+}
+
+.title h2 {
+  background: -webkit-linear-gradient(#333, #d3833a);
+  width: fit-content;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
 }
 
 .btn-container {
@@ -15,8 +43,8 @@
 
 button {
   font-style: italic;
-  background: none;
-  border: 2px solid;
+  background: #6c9d34;
+  border: 6px solid #408836;
   width: 200px;
   height: 50px;
   color: white;
