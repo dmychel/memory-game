@@ -1,7 +1,14 @@
+// STYLESHEET
 import "./App.css";
 
+// FONTS
+import "./assets/fonts/SherwoodRegular.ttf";
+
+// COMPONENTS
 import Content from "./components/UI/Content";
 import Header from "./components/UI/Header";
+
+// FUNCTIONS
 import { useState, useEffect } from "react";
 import { fetchEntry } from "./components/service/api/fetchEntry";
 import { useLocalStorage } from "./components/useLocalStorage";

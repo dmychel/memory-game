@@ -1,7 +1,15 @@
 * {
   margin: 0;
   padding: 0;
+  font-family: 'wind waker'
 }
+
+@font-face {
+  font-family: 'wind waker';
+  src: url('./assets/fonts/SherwoodRegular.ttf');
+}
+
+
 
 .app {
   display: flex;
