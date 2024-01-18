@@ -4,10 +4,6 @@ import "./App.css";
 // FONTS
 import "./assets/fonts/SherwoodRegular.ttf";
 
-// AUDIO
-
-import sound from "./assets/audio/Outset Island - The Legend of Zelda The Wind Waker.mp3";
-
 // COMPONENTS
 import Content from "./components/UI/Content";
 import Header from "./components/UI/Header";
@@ -31,10 +27,6 @@ function App() {
   const [gameStart, setGameStart] = useState(false);
   const [difficulty, setDifficulty] = useState(0);
 
-  // PLAY SONG
-  useEffect(() => {
-    new Audio(sound).play();
-  }, []),
     // check clicks
     useEffect(() => {
       if (selection.length === 3 && difficulty === 1) {
