@@ -6,7 +6,7 @@
 
 @font-face {
   font-family: 'wind waker';
-  src: url('./assets/fonts/SherwoodRegular.ttf');
+  src: url('/assets/fonts/SherwoodRegular.ttf');
 }
 
 
@@ -15,7 +15,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-image: url("../src/assets/img/background.jpeg");
+  background-image: url("/assets/img/background.jpeg");
   background-size: cover;
   height: 100vh;
   overflow-x: hidden;

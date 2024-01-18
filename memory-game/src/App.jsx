@@ -2,7 +2,7 @@
 import "./App.css";
 
 // FONTS
-import "./assets/fonts/SherwoodRegular.ttf";
+import "/assets/fonts/SherwoodRegular.ttf";
 
 // COMPONENTS
 import Content from "./components/UI/Content";
@@ -27,14 +27,14 @@ function App() {
   const [gameStart, setGameStart] = useState(false);
   const [difficulty, setDifficulty] = useState(0);
 
-    // check clicks
-    useEffect(() => {
-      if (selection.length === 3 && difficulty === 1) {
-        checkPlay();
-      } else if (selection.length === 2 && difficulty == 2) {
-        checkPlay();
-      }
-    }, [selection, difficulty]);
+  // check clicks
+  useEffect(() => {
+    if (selection.length === 3 && difficulty === 1) {
+      checkPlay();
+    } else if (selection.length === 2 && difficulty == 2) {
+      checkPlay();
+    }
+  }, [selection, difficulty]);
 
   // check round status
   useEffect(() => {
