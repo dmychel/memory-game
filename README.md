@@ -1,6 +1,6 @@
 # Windfall Matchup
 
-Welcome to Windfall Matchup! Simply a matching game with a Zelda Code of paint. There is a hard and easy difficulty setting and the game keeps track of your heighest score.
+Welcome to Windfall Matchup! Simply a matching game with a Zelda Code of paint. There is a hard and easy difficulty setting and the game keeps track of your heigest score.
 
 ## VERSION 1.0
 
