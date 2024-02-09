@@ -47,7 +47,7 @@ const Card = ({
   const RegCardHard = () => {
     return (
       <div className={regClass()} onClick={() => handleClick()}>
-        <img src="../../src/assets/img/card-art.png" alt="Card Art" />
+        <img src="./assets/img/card-art.png" alt="Card Art" />
       </div>
     );
   };
